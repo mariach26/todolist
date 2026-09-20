@@ -18,9 +18,9 @@ class MainWindow(QMainWindow):
 
         self.list_view=self.ui.task_listView
         self.add_btn=self.ui.add_btn
-        self.task_input=self.ui.new_task
+        self.task_input=self.ui.newTask
 
-        self.list_model=QStandardItemModel
+        self.list_model = QStandardItemModel()
         self.init_ui()
 
 
@@ -33,7 +33,7 @@ class MainWindow(QMainWindow):
     def init_ui(self):
         self.list_view.setModel(self.list_model)
         self.list_view.setSpacing(5)
-        self.list_view.setFocusPolicy(Qt.Policy.NoFocus)
+        self.list_view.setFocusPolicy(Qt.FocusPolicy.NoFocus)
 
         #icon gia add button
         self.add_btn.setIcon(QIcon("./static/icons/add_min.svg"))
@@ -41,9 +41,9 @@ class MainWindow(QMainWindow):
 
     def add_new_task(self):
         #neo task apo xrhsth
-        new_task=self.task_input.text().strip()
-        if new_task:
-            self.task_list.append([new_task,False])
+        newTask=self.task_input.text().strip()
+        if newTask:
+            self.task_list.append([newTask,False])
             self.show_tasks(self.task_list)
             self.task_input.clear()
 
@@ -65,7 +65,7 @@ class MainWindow(QMainWindow):
             else:
                 return list()
             
-    def show_tasks(self):
+    def show_tasks(self,task_list):
         #custon widgets gia kathe task
         self.list_model.clear()
         if self.task_list:

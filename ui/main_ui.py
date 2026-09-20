@@ -7,7 +7,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        with open("./static/style.qss","r") as style_file:
+        with open(r"C:\Users\maria\todolist\static\style.css", "r") as style_file:
             style_str=style_file.read()
             MainWindow.setStyleSheet(style_str)
 
@@ -16,8 +16,8 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setWindowTitle("To Do List")
 
-        window_icon = QtGui.Qicon('./static/icons/list.svg') #main window icon
-        MainWindow.setWindow(window_icon)
+        window_icon = QtGui.QIcon('./static/icons/list.svg') #main window icon
+        MainWindow.setWindowIcon(window_icon)
 
         #central widget
         self.centralWidget = QtWidgets.QWidget(parent=MainWindow)
@@ -32,7 +32,7 @@ class Ui_MainWindow(object):
         self.title_frame = QtWidgets.QFrame(parent=self.centralWidget)
         self.title_frame.setMaximumSize(QtCore.QSize(16777215,60))
         self.title_frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.title_frame.setFrameShadow(QtWidgets.Qframe.Shadow.Raised)
+        self.title_frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.title_frame.setObjectName("title_frame")
 
         #title section
@@ -68,7 +68,7 @@ class Ui_MainWindow(object):
 
         self.task_listView=QtWidgets.QListView(parent=self.task_frame)
         self.task_listView.setFocusPolicy(QtCore.Qt.FocusPolicy.NoFocus)
-        self.task_listView.setEditTriggers(QtWidgets.QAbstractItemView.DragonDropMode.DragOnly)
+        self.task_listView.setDragDropMode(QtWidgets.QAbstractItemView.DragDropMode.DragOnly)
         self.task_listView.setSelectionMode(QtWidgets.QAbstractItemView.SelectionMode.NoSelection)
         self.task_listView.setMovement(QtWidgets.QListView.Movement.Free)
         self.task_listView.setObjectName("task_listView")
@@ -96,8 +96,8 @@ class Ui_MainWindow(object):
         font=QtGui.QFont()
         font.setBold(True)
         self.add_btn.setFont(font)
-        self.add_btn.setIcon(QtGui.QIcon("./static/icons/add_black"))
-        self.add_btn.setICon(QtCore.QSize(30,30))
+        self.add_btn.setIcon(QtGui.QIcon("./static/icons/add_black.svg"))
+        self.add_btn.setIconSize(QtCore.QSize(30,30))
         self.add_btn.setObjectName("add_btn")
 
         self.add_HorizontalLayout.addWidget(self.add_btn)
