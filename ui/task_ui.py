@@ -27,7 +27,7 @@ class Ui_TaskForm(QtWidgets. QWidget):
         self.task_check_box.stateChanged.connect(self.update_style)
 
         #otan patietai to remove btn, to task prepei na kleisei
-        self.remove_btn.clicked.connect(self.emitCLoseSignal)
+        self.remove_btn.clicked.connect(self.emitCloseSignal)
 
 
 
@@ -35,7 +35,7 @@ class Ui_TaskForm(QtWidgets. QWidget):
         self.setGeometry( 0,0,1000,100)
 
         #css apo arxeio
-        with open("./static/style_task.qss", "r") as style_file:
+        with open("./static/style_task.css", "r") as style_file:
             style_str = style_file.read()
             self.setStyleSheet(style_str)
             
