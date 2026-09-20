@@ -1,0 +1,42 @@
+/*widget styling*/
+QWidget {
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+QCheckBox {
+    color:#0000;
+    font-size: 15px;
+}
+
+QCheckBox:checked{
+text-decoration: line-through;
+color: #808080; /*gkri gia na diaforopoieitai to unchecked*/
+}
+
+QCheckBox::indicator{
+    width:30px;
+    height: 30px;
+}
+
+QCheckBox::indicator:checked{
+    background-image: url("./static/icons/circle_full.svg");
+    /*background-position: center;
+    background-repeat: no-repeat;*/
+}
+
+QCheckBox::indicator:unchecked{
+    background-image: url("./static/icons/circle.svg");
+}
+
+QPushButton{
+    border: none;
+    border-radius: 15px;
+    max-width: 40px;
+    max-height: 40px;
+}
+
+/*hover effect*/
+QPushButton:hover{
+    background: #c3c8bb;
+}

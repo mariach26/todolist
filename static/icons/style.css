@@ -1,0 +1,68 @@
+#MainWindow {
+    background: url("./static/backgroung.jpg")no-repeat center center fixed;
+
+}
+
+QLabel{
+    font-size: 25px;
+    font-weight: 700; /*bold*/
+}
+
+QLineEdit{
+    font-size: 15px;
+    border: none;
+    background-color: transparent; 
+}
+
+#task_listView{
+    background: transparent;
+    border: none;
+}
+
+#title_frame, #task_frame{
+    background: rgba(255,255,255,0.7);
+    border-radius: 10px;
+}
+
+#add_task_frame,
+#add_task_frame QPushButton{
+    border-radius: 35px;
+    height: 70px;
+}
+
+#add_task_frame{
+    background-color:#e5e5e5 ;
+    font-size: 20px;
+}
+
+#add_task_frame QPushButton{
+    background-color: #ff643a;
+    color:#fff;
+    width: 150px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+QScrollBar:vertical, QScrollBar:horizontal{
+    border: none;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.1);
+    width: 5px;
+    height: 5px;
+}
+
+QScrollBar::handle:vertical, QScrollBar::handle:horizontal{
+    background: #1e1f22;
+    min-height: 20px; /*katheta*/
+    min-width: 20px; /*orizontia*/
+    border-radius: 2px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical,
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal{
+    height: 0;
+    width: 0;
+    border: none;
+    background: none;
+}
+

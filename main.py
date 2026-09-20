@@ -52,7 +52,7 @@ class MainWindow(QMainWindow):
         self.list_model.removeRow(position)
         self.task_list.pop(position)
         self.get_all_tasks()
-        self.show_tasks(self.task_list)
+        self.show_tasks(self.task_list) #refresh task list
 
 
     def get_tasks(self):
@@ -86,7 +86,9 @@ class MainWindow(QMainWindow):
             if isinstance(widget,Ui_TaskForm):
                 self.task_list.append([widget.get_checkbox_text(), widget.get_checkbox_state()])
 
-    def closeEvent(self,event):
+    def closeEvent(self,event): 
+#apothikeysh twrinwn tasks se json
+
         self.get_all_tasks()
         with open(self.task_file_path, "w") as f:
             pass
